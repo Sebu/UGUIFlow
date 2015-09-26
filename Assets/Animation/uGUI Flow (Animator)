@@ -1,0 +1,21 @@
+uGUI Flow (Animator)
+
+
+What?
+
+Visual Programmable FSM for uGUI Panels
+
+FSM
+
+Right now
+Scene (View -> cancas -> panel)
+
+Why?
+
+What it is not!
+- a animator based state machine
+- only UI/Panel / Scene / prefab
+
+https://www.reddit.com/r/Unity3D/comments/2u67bk/how_to_manage_gui_across_multiple_scenes/
+
+
