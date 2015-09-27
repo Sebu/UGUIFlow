@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class MenuStateMachine : MonoBehaviour {
 
@@ -37,35 +38,37 @@ public class MenuStateMachine : MonoBehaviour {
 		// always reset the back event
 		animator.ResetTrigger (ANDROID_BACK);
 	}
-	
-	public void AttachViewToMenuState(BaseMenuState menuState) {
 
-		GameObject go;
+	public void GetViewByName(string viewName, Action<BaseView> callback) {
+
+		BaseView view = null;
+		GameObject go = null;
 		// lookup cache
 //		menuState.view = viewByNameCache [menuState.viewName];
 
 		// find in scene
-		if (menuState.view == null) {
-			go = GameObject.Find(menuState.viewName);
+		if (view == null) {
+			go = GameObject.Find(viewName);
 			if (go) {
-				menuState.view = go.GetComponent<BaseView>(); 
+				view = go.GetComponent<BaseView>(); 
 			}
 		}
 
 		// load async
-		if (menuState.view == null) {
-			StartCoroutine(LoadUIScene (menuState));
+		if (view == null) {
+			StartCoroutine(LoadUIScene (viewName, callback));
 		} else {
-			menuState.view.menuState = menuState;
+			callback(view);
 		}
 	}
 
 
-	private IEnumerator LoadUIScene(BaseMenuState menuState) {
-		AsyncOperation async = Application.LoadLevelAdditiveAsync (menuState.viewName);
+
+	private IEnumerator LoadUIScene(string viewName, Action<BaseView> callback) {
+		AsyncOperation async = Application.LoadLevelAdditiveAsync (viewName);
 		yield return async;
-		menuState.view = GameObject.Find (menuState.viewName).GetComponent<BaseView>();
-		menuState.view.menuState = menuState;
+		BaseView view = GameObject.Find(viewName).GetComponent<BaseView>();
+		callback(view);
 	}
 
 }

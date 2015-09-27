@@ -1,16 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BaseMenuState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MenuStateMachine.cs">
     <Files>
       <File FileName="Assets/Scripts/BaseView.cs" Line="5" Column="2" />
-      <File FileName="Assets/MenuStateMachine.cs" Line="7" Column="45" />
-      <File FileName="Assets/Scripts/BaseMenuState.cs" Line="5" Column="51" />
+      <File FileName="Assets/MenuStateMachine.cs" Line="65" Column="1" />
+      <File FileName="Assets/Scripts/BaseMenuState.cs" Line="10" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/seb/Documents/uiTest/Assets/Scripts/BaseMenuState.cs" line="25" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

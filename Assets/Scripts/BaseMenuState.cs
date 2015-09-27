@@ -6,17 +6,24 @@ public class BaseMenuState : StateMachineBehaviour {
 
 	public string sceneName;
 	public string viewName;
-	public BaseView view;
 
+	private BaseView view;
 	private MenuStateMachine menuStateMachine;
-	private Animator animator;
 
 	public void SendEvent(string eventName) {
 		// TODO: analyse eventName and do stuff
-
 		menuStateMachine.SendEvent(eventName);
 	}
 
+	public void OnEnter() {
+
+	}
+
+	public void OnExit() {
+
+	}
+
+#region internal 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		// this transition is going to a new scene
 		if (!string.IsNullOrEmpty(sceneName) && Application.loadedLevelName != sceneName) {
@@ -25,11 +32,18 @@ public class BaseMenuState : StateMachineBehaviour {
 
 
 		menuStateMachine = animator.GetComponent<MenuStateMachine>();
-		menuStateMachine.AttachViewToMenuState(this);
+		menuStateMachine.GetViewByName(this.viewName, OnAttach);
 
 	}
 
+	private void OnAttach(BaseView viewInScene) {
+		view = viewInScene;
+		view.menuState = this;
+		OnEnter();
+	}
+	
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-//		view.Close ();
+		OnExit ();
 	}
+#endregion
 }
