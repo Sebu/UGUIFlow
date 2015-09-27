@@ -6,12 +6,11 @@ using System;
 public class MenuStateMachine : MonoBehaviour {
 
 	private const string ANDROID_BACK = "Back";
+
 	// 
 	public Animator animator;
 	public string startTrigger;
-
-	private Dictionary<string, BaseView> viewByNameCache;
-
+	
 	void Awake() {
 		DontDestroyOnLoad (this);
 
@@ -42,17 +41,9 @@ public class MenuStateMachine : MonoBehaviour {
 	public void GetViewByName(string viewName, Action<BaseView> callback) {
 
 		BaseView view = null;
-		GameObject go = null;
-		// lookup cache
-//		menuState.view = viewByNameCache [menuState.viewName];
 
 		// find in scene
-		if (view == null) {
-			go = GameObject.Find(viewName);
-			if (go) {
-				view = go.GetComponent<BaseView>(); 
-			}
-		}
+		view = FindView(viewName);
 
 		// load async
 		if (view == null) {
@@ -62,13 +53,19 @@ public class MenuStateMachine : MonoBehaviour {
 		}
 	}
 
-
-
 	private IEnumerator LoadUIScene(string viewName, Action<BaseView> callback) {
 		AsyncOperation async = Application.LoadLevelAdditiveAsync (viewName);
 		yield return async;
-		BaseView view = GameObject.Find(viewName).GetComponent<BaseView>();
+		BaseView view = FindView(viewName);
 		callback(view);
 	}
 
+	private BaseView FindView (string viewName) {
+		BaseView view = null;
+		GameObject go = GameObject.Find (viewName);
+		if (go) {
+			view = go.GetComponent<BaseView> (); 
+		}
+		return view;
+	}
 }

@@ -4,7 +4,7 @@ uGUI Flow (Animator)
 TODO: 
 	Back (set trigger when not going back or reset bool when going back)
 	Test UI overlap
-	Make StartTrigger more robust 
+	Make StartTrigger more robust (no prefabbing)
 
 //////
 
