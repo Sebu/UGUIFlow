@@ -9,6 +9,7 @@ public class BaseMenuState : StateMachineBehaviour {
 	public BaseView view;
 
 	private MenuStateMachine menuStateMachine;
+	private Animator animator;
 
 	public void SendEvent(string eventName) {
 		// TODO: analyse eventName and do stuff

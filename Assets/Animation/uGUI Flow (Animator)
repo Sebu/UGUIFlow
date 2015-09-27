@@ -1,16 +1,41 @@
 uGUI Flow (Animator)
 
 
+TODO: 
+	Back (set trigger when not going back or reset bool when going back)
+	Test UI overlap
+	Make StartTrigger more robust 
+
+//////
+
 What?
 
 Visual Programmable FSM for uGUI Panels
 
-FSM
-
-Right now
-Scene (View -> cancas -> panel)
+[image]
 
 Why?
+JS,MG,Futurama event driven Menu State Machine
+-> + visual Unity love
+
+
+Right now View -> sends Events to FSM
+Scene (IView/BaseView -> cancas -> panel)
+	Alternatives
+ 		Prefab?
+ 		Scene (Panel)
+
+
+ StateMachine -> 
+
+Animator / AnimationController
+State - Transition - State 
+BaseState.View.sendEvent -> StateMachine.Animator.setTrigger -> switch state
+
+
+
+
+
 
 What it is not!
 - a animator based state machine

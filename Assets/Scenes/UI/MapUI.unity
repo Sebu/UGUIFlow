@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b4b463a9e54513be1081a449cf511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuStateMachine: {fileID: 0}
+  menuState: {fileID: 0}
 --- !u!95 &145489773
 Animator:
   serializedVersion: 3
@@ -206,7 +206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Map
 --- !u!222 &726805825
 CanvasRenderer:
   m_ObjectHideFlags: 0

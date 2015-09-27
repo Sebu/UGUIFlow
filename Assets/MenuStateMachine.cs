@@ -4,9 +4,10 @@ using System.Collections.Generic;
 
 public class MenuStateMachine : MonoBehaviour {
 
-	private const string ANDROID_BACK = "back";
+	private const string ANDROID_BACK = "Back";
 	// 
 	public Animator animator;
+	public string startTrigger;
 
 	private Dictionary<string, BaseView> viewByNameCache;
 
@@ -16,6 +17,10 @@ public class MenuStateMachine : MonoBehaviour {
 		if (FindObjectsOfType(GetType()).Length > 1)
 		{
 			Destroy(gameObject);
+		}
+
+		if (!string.IsNullOrEmpty(startTrigger)) {
+			animator.SetTrigger(startTrigger);
 		}
 	}
 
