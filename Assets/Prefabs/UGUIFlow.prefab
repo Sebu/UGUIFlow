@@ -54,10 +54,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 175534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c8f67d86444497095fbf6072aacdc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 84dd9d1d12ab24dd49b2e9ddf6d09c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9558904}
+  startTrigger: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
