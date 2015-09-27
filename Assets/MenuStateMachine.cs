@@ -34,6 +34,7 @@ public class MenuStateMachine : MonoBehaviour {
 	
 	public void SendEvent(string triggerName) {
 		animator.SetTrigger(triggerName);
+
 		// always reset the back event
 		animator.ResetTrigger (ANDROID_BACK);
 	}

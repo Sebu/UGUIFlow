@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BaseView : MonoBehaviour {
-
+	
 	public BaseMenuState menuState;
 
 	public void SendEvent(string eventName) {
