@@ -113,7 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: PauseUI
-  eventOnExit: 
 --- !u!114 &11416060
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -127,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: DebugLevelSelectUI
-  eventOnExit: 
 --- !u!114 &11419664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: GameScene
   viewName: GameUI
-  eventOnExit: 
 --- !u!114 &11427238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: StartScene
   viewName: StartUI
-  eventOnExit: 
 --- !u!114 &11443246
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -169,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: OutOfLivesUI
-  eventOnExit: 
 --- !u!114 &11447548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: DebugLevelSelectUI
-  eventOnExit: 
 --- !u!114 &11467170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,7 +191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: OutOfLivesUI
-  eventOnExit: 
 --- !u!114 &11479424
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -211,7 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MapScene
   viewName: MapUI
-  eventOnExit: 
 --- !u!114 &11482266
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -225,7 +217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: StartUI
-  eventOnExit: 
 --- !u!114 &11484360
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -239,7 +230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: SettingsUI
-  eventOnExit: 
 --- !u!114 &11487244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,7 +243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MapScene
   viewName: MapUI
-  eventOnExit: 
 --- !u!114 &11487954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -267,7 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: PauseUI
-  eventOnExit: 
 --- !u!114 &11488796
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -281,7 +269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: GameUI
-  eventOnExit: 
 --- !u!114 &11491674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   viewName: OptionsUI
-  eventOnExit: ShowSettings
 --- !u!1101 &110100212
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -762,7 +748,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Play
+    m_ConditionEvent: ShowMap
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110278338}
@@ -1233,6 +1219,23 @@ AnimatorState:
   m_Mirror: 0
   m_Motion: {fileID: 0}
   m_Tag: 
+--- !u!1102 &110216076
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New State
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_Motion: {fileID: 0}
+  m_Tag: 
 --- !u!1102 &110228618
 AnimatorState:
   serializedVersion: 5
@@ -1606,7 +1609,7 @@ AnimatorStateMachine:
     m_Position: {x: 336, y: 84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110241222}
-    m_Position: {x: -168, y: 24, z: 0}
+    m_Position: {x: -156, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110265392}
     m_Position: {x: 576, y: 24, z: 0}
@@ -1625,6 +1628,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 110253410}
     m_Position: {x: -432, y: -72, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110216076}
+    m_Position: {x: 18, y: 184, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 110755718}
@@ -1655,7 +1661,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: -396, y: 24, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 110241222}
+  m_DefaultState: {fileID: 110216076}
 --- !u!1107 &110755718
 AnimatorStateMachine:
   serializedVersion: 5

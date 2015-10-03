@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b4b463a9e54513be1081a449cf511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuState: {fileID: 0}
 --- !u!95 &145489773
 Animator:
   serializedVersion: 3
@@ -223,7 +222,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 145489772}
-        m_MethodName: SendEvent
+        m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -697,7 +696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 145489772}
-        m_MethodName: SendEvent
+        m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
